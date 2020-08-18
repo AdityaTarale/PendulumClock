@@ -1,0 +1,233 @@
+html {
+  font-size: 70%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* #C59C6C #A67C52*/
+}
+body {
+  background: #5dbb94;
+}
+.container {
+  /* height: 80vh; */
+  max-width: 40rem;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* border: 5px dotted black; */
+}
+.box1 {
+  position: absolute;
+  z-index: 1;
+  width: 17rem;
+  top: -0.5rem;
+  height: 50rem;
+  background: #434343;
+  border-top-right-radius: 10rem;
+  border-top-left-radius: 10rem;
+  box-shadow: 0px 9px 22px -6px rgba(69, 69, 69, 0.52);
+}
+.box2 {
+  position: absolute;
+  z-index: -1;
+  top: 18rem;
+  height: 1.5rem;
+  width: 19.5rem;
+  background: #434343;
+  border-radius: 6rem;
+}
+.box3 {
+  position: absolute;
+  z-index: 1;
+  top: 3rem;
+  width: 17rem;
+  height: 25rem;
+  background: #434343;
+}
+.box4 {
+  position: absolute;
+  top: 15rem;
+  width: 11rem;
+  height: 32.5rem;
+  background: #f8e1c7;
+  border: 2px solid #d49b62;
+  border-top-right-radius: 10rem;
+  border-top-left-radius: 10rem;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 1), 
+              0 20 20px rgba(0, 0, 0, 2),
+              0 0 0 4px rgba(255, 255, 255, 1);
+  z-index: 5;
+}
+.bottom-one {
+  position: absolute;
+  top: 45rem;
+  height: 5rem;
+  width: 20rem;
+  background: #434343;
+  clip-path: polygon(50% 0%, 100% 61%, 100% 100%, 50% 100%, 0 100%, 0 61%);
+  z-index: -4;
+}
+.bottom-last {
+  position: absolute;
+  top: 50rem;
+  height: 3.5rem;
+  width: 20rem;
+  background: #333333;
+  z-index: -5;
+}
+.clockpre {
+  position: absolute;
+  top: 4.5rem;
+  width: 14rem;
+  height: 14rem;
+  border: 1rem solid #434343;
+  border-radius: 50%;
+  z-index: 12;
+}
+.clock {
+  position: absolute;
+  top: 5rem;
+  width: 13rem;
+  height: 13rem;
+  background: #f8e1c7;
+  /* #c59c6c; */
+  border: 0.2rem solid #a67c52;
+  border-radius: 50%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 1), 0 20 20px rgba(0, 0, 0, 2),
+    0 0 0 4px rgba(255, 255, 255, 1);
+}
+.clock-inside-circle {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  z-index: -2;
+  background: #c08c59;
+  border-radius: 50%;
+}
+.dialor {
+  display: block;
+  margin: auto;
+  width: 12rem;
+  height: 12rem;
+}
+.clock::before {
+  content: " ";
+  position: absolute;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: #848484;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 50;
+}
+.hour,
+.min,
+.sec {
+  position: absolute;
+}
+.hour,
+.hr {
+  width: 8rem;
+  height: 8rem;
+}
+.min,
+.mn {
+  width: 9rem;
+  height: 9rem;
+}
+.sec,
+.sc {
+  width: 10rem;
+  height: 10rem;
+}
+.hr,
+.mn,
+.sc {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+.hr::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 65px;
+  background: rgb(80, 79, 79);
+  z-index: 1000;
+  border: 0.001rem solid rgb(168, 168, 168);
+  border-radius: 5px 5px 0 0;
+}
+.mn::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 75px;
+  background: #080707;
+  z-index: 1100;
+  border: 0.001rem solid rgb(168, 168, 168);
+  border-radius: 5px 5px 0 0;
+}
+.sc::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 75px;
+  background: #fa0000;
+  z-index: 1200;
+  border-radius: 5px 5px 0 0;
+}
+
+/*Pendulum*/
+/* Inspried From Swarup Kumar Kuila Pen(codepen) */
+.pendulum {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 12rem;
+  margin: 0px auto;
+  width: 18.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center top;
+  animation-timing-function: cubic-bezier(0.6, 0, 0.38, 1);
+  animation: move 3.5s infinite;
+  z-index: 17;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+.cable {
+  width: 0.45rem;
+  height: 30.5rem;
+  background: #daa520;
+  box-shadow: 0px 9px 22px -6px rgba(0, 0, 0, 0.52);
+}
+.load {
+  width: 4rem;
+  height: 4rem;
+  background: #daa520;
+  box-shadow: 0px 9px 22px -6px rgba(0, 0, 0, 0.52);
+  border-radius: 10rem;
+  position: relative;
+  z-index: 200;
+}
